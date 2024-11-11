@@ -20,12 +20,11 @@ import {
 import { useEffect, useState } from 'react';
 
 export default function NavBar() {
-	const { address, isConnected, isConnecting, isDisconnected, chainId } =
-		useAccount();
-	const { disconnect, disconnectAsync } = useDisconnect();
+	const { address, isConnected, chainId } = useAccount();
+	const { disconnectAsync } = useDisconnect();
 	const { getUserInfo } = useParticleAuth();
 
-	const [userInfo, setUserInfo] = useState<any>(null);
+	const [userInfo, setUserInfo] = useState<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
 	const [account, setAccount] = useState(null);
 	const [userAddress, setUserAddress] = useState<string>('');
 

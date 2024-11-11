@@ -14,16 +14,16 @@ export default function Connect() {
 	// Initialize account-related states from Particle's useAccount hook
 	const { address, isConnected, isConnecting, isDisconnected, chainId } =
 		useAccount();
-	const { disconnect, disconnectAsync } = useDisconnect();
+	const { disconnectAsync } = useDisconnect();
 	const { getUserInfo } = useParticleAuth();
 
 	// Define state variables
-	const [account, setAccount] = useState(null); // Store account information
-	const [balance, setBalance] = useState<string>(''); // Store user's balance
-	const [userAddress, setUserAddress] = useState<string>(''); // Store user's address
-	const [userInfo, setUserInfo] = useState<any>(null); // Store user's information
-	const [isLoadingUserInfo, setIsLoadingUserInfo] = useState<boolean>(false); // Loading state for fetching user info
-	const [userInfoError, setUserInfoError] = useState<string | null>(null); // Error state for fetching user info
+	const [account, setAccount] = useState(null);
+	// const [balance, setBalance] = useState<string>('');
+	const [userAddress, setUserAddress] = useState<string>('');
+	const [userInfo, setUserInfo] = useState<any>(null); // eslint-disable-line @typescript-eslint/no-explicit-any
+	const [isLoadingUserInfo, setIsLoadingUserInfo] = useState<boolean>(false);
+	const [userInfoError, setUserInfoError] = useState<string | null>(null);
 
 	// Connection status message based on the account's connection state
 	const connectionStatus = isConnecting
@@ -41,6 +41,7 @@ export default function Connect() {
 				setAccount(account);
 				setUserAddress(address);
 				// await fetchBalance();
+				console.log(connectionStatus);
 			}
 		}
 		loadAccount();

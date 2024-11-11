@@ -2,7 +2,6 @@
 
 import {
 	Bell,
-	ChevronDown,
 	CreditCard,
 	DollarSign,
 	Globe,
@@ -47,6 +46,8 @@ export default function RemittanceApp() {
 
 	const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setAmount(e.target.value);
+		setExchangeRate(exchangeRate + 0.1);
+		setFee(fee - 0.01);
 	};
 
 	return (

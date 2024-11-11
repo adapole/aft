@@ -1,6 +1,6 @@
 'use client';
 
-import { Bell, CreditCard, User } from 'lucide-react';
+import { Bell } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,6 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
@@ -31,16 +30,16 @@ import SideBar from './sidebar';
 import NavBar from './navbar';
 import SendMoney from './send-money';
 
-const exchangeRateData = [
-	{ date: '7 Oct', rate: 0.911 },
-	{ date: '', rate: 0.915 },
-	{ date: '', rate: 0.922 },
-	{ date: '', rate: 0.919 },
-	{ date: '', rate: 0.921 },
-	{ date: '', rate: 0.918 },
-	{ date: '', rate: 0.923 },
-	{ date: 'Today', rate: 0.934 },
-];
+// const exchangeRateData = [
+// 	{ date: '7 Oct', rate: 0.911 },
+// 	{ date: '', rate: 0.915 },
+// 	{ date: '', rate: 0.922 },
+// 	{ date: '', rate: 0.919 },
+// 	{ date: '', rate: 0.921 },
+// 	{ date: '', rate: 0.918 },
+// 	{ date: '', rate: 0.923 },
+// 	{ date: 'Today', rate: 0.934 },
+// ];
 
 const chartData = [
 	{ date: '7 Oct', rate: 0.911 },

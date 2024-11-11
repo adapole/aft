@@ -1,6 +1,6 @@
 'use client';
 
-import { User, X } from 'lucide-react';
+// import { User, X } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -145,7 +145,7 @@ export default function AddMoneyModal() {
 									</div>
 								</div>
 								<div className='flex justify-between border-t py-4 text-sm'>
-									<span>Total you'll pay</span>
+									<span>Total you&apos;ll pay</span>
 									<span className='font-medium'>1,002.50 USD</span>
 								</div>
 								<Button className='w-full bg-[#2ED06E] py-6 text-base font-medium hover:bg-[#2ED06E]/90'>

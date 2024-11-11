@@ -1,48 +1,22 @@
 'use client';
 
-import {
-	Bell,
-	ChevronDown,
-	CreditCard,
-	DollarSign,
-	Globe,
-	Home,
-	PieChart,
-	Send,
-	User,
-} from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-import { Input } from '@/components/ui/input';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SideBar from '../sidebar';
 import NavBar from '../navbar';
 
 export default function RemittanceApp() {
-	const [amount, setAmount] = React.useState('1000');
-	const [exchangeRate, setExchangeRate] = React.useState(0.85);
-	const [fee, setFee] = React.useState(4.99);
+	// const [amount, setAmount] = React.useState('1000');
+	// const [exchangeRate, setExchangeRate] = React.useState(0.85);
+	// const [fee, setFee] = React.useState(4.99);
 
-	const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setAmount(e.target.value);
-	};
+	// const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	// 	setAmount(e.target.value);
+	// };
 
 	return (
 		<div className='flex min-h-screen flex-col bg-gray-100'>
