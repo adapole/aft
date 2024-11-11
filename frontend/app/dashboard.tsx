@@ -29,6 +29,8 @@ import {
 import SideBar from './sidebar';
 import NavBar from './navbar';
 import SendMoney from './send-money';
+import { Skeleton } from '@/components/ui/skeleton';
+import { useAccount } from '@particle-network/connectkit';
 
 // const exchangeRateData = [
 // 	{ date: '7 Oct', rate: 0.911 },
@@ -64,6 +66,7 @@ export default function Component() {
 
 	const convertedAmount = (parseFloat(amount) * currentRate).toFixed(2);
 	const fees = '3.40';
+	const { isConnected } = useAccount();
 
 	return (
 		<div className='min-h-screen bg-gray-50'>
@@ -76,7 +79,16 @@ export default function Component() {
 					<div className='mb-6'>
 						<div className='mb-1 text-sm text-gray-500'>Total balance</div>
 						<div className='flex items-center gap-2'>
-							<h1 className='text-3xl font-bold'>87,658.79 USD</h1>
+							{isConnected ? (
+								<>
+									<h1 className='text-3xl font-bold'>87,658.79 USD</h1>
+								</>
+							) : (
+								<>
+									<Skeleton className='h-10 w-48' />
+									{/* <Skeleton className='h-8 w-8 rounded-full' /> */}
+								</>
+							)}
 							<Button variant='ghost' size='icon' className='rounded-full'>
 								<svg
 									className='h-4 w-4'
@@ -108,7 +120,11 @@ export default function Component() {
 									</div>
 									<div className='font-medium'>USD</div>
 								</div>
-								<div className='text-2xl font-bold'>725.07</div>
+								{isConnected ? (
+									<div className='text-2xl font-bold'>725.07</div>
+								) : (
+									<Skeleton className='h-8 w-24' />
+								)}
 							</CardContent>
 						</Card>
 						<Card>
@@ -119,8 +135,17 @@ export default function Component() {
 									</div>
 									<div className='font-medium'>ETB</div>
 								</div>
-								<div className='mb-1 text-2xl font-bold'>0.00</div>
-								<div className='text-sm text-gray-500'>↗ 3.3782</div>
+								{isConnected ? (
+									<>
+										<div className='text-2xl font-bold'>725.07</div>
+										<div className='text-sm text-gray-500'>↗ 3.3782</div>
+									</>
+								) : (
+									<>
+										<Skeleton className='h-8 w-24' />
+										<Skeleton className='mt-1 h-4 w-16' />
+									</>
+								)}
 							</CardContent>
 						</Card>
 						<Card className='border-dashed'>
@@ -257,16 +282,24 @@ export default function Component() {
 											>
 												<div className='flex items-center space-x-4'>
 													<div className='h-10 w-10 rounded-full bg-gray-200' />
-													<div>
-														<p className='text-sm font-medium leading-none'>
-															{name}
-														</p>
-														<p className='text-sm text-gray-500'>
-															Last sent: 2 weeks ago
-														</p>
-													</div>
+													{isConnected ? (
+														<div>
+															<p className='text-sm font-medium leading-none'>
+																{name}
+															</p>
+															<p className='text-sm text-gray-500'>
+																Last sent: 2 weeks ago
+															</p>
+														</div>
+													) : (
+														<Skeleton className='h-10 w-48' />
+													)}
 												</div>
-												<Button variant='outline'>Send Again</Button>
+												{isConnected ? (
+													<Button variant='outline'>Send Again</Button>
+												) : (
+													<Skeleton className='h-8 w-24' />
+												)}
 											</div>
 										)
 									)}
