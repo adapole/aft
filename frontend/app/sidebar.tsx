@@ -1,6 +1,6 @@
 'use client';
 
-import { Gift, Home, Menu, Users } from 'lucide-react';
+import { Gift, Home, Menu, Users, Milestone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
 	Sheet,
@@ -82,7 +82,15 @@ export default function SideBar() {
 						onClick={() => setOpen(false)}
 					>
 						<Gift className='h-4 w-4' />
-						<Link href='/'>PMM</Link>
+						<Link href='/pool'>Pool</Link>
+					</Button>
+					<Button
+						variant='ghost'
+						className='justify-start gap-2'
+						onClick={() => setOpen(false)}
+					>
+						<Milestone className='h-4 w-4' />
+						<Link href='/dashboard'>Dashboard</Link>
 					</Button>
 				</div>
 			</SheetContent>

@@ -1,6 +1,7 @@
-import NavBar from './navbar';
-import SideBar from './sidebar';
-import CryptoSwap from './swap/buy';
+// import AddLiquidity from './addliquidity';
+import NavBar from '../navbar';
+import SideBar from '../sidebar';
+import PoolPage from './pool';
 
 export default function Home() {
 	return (
@@ -11,7 +12,7 @@ export default function Home() {
 			</header>
 			<main className='p-4'>
 				<div className='container mx-auto px-4'>
-					<CryptoSwap />
+					<PoolPage />
 				</div>
 			</main>
 		</div>
